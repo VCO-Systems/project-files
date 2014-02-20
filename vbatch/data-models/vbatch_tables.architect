@@ -4,20 +4,11 @@
  <print-settings numCopies="1" zoom="1.0" pageNumbersPrinted="true" orientation="1" paperWidth="612.0" paperHeight="792.0" leftBorder="50.0" rightBorder="50.0" topBorder="50.0" bottomBorder="50.0" />
  <project-data-sources>
   <data-source id="DS0">
-   <property key="Logical" value="vbatch_dev_local" />
-   <property key="Connection Type" value="Oracle 11g" />
-   <property key="JDBC URL" value="jdbc:oracle:thin:@192.168.56.1:1521:XE" />
-   <property key="UID" value="vbatch" />
-   <property key="PWD" value="vbatch" />
-   <property key="ca.sqlpower.architect.etl.kettle.database" value="" />
-   <property key="ca.sqlpower.architect.etl.kettle.port" value="" />
-   <property key="ca.sqlpower.architect.etl.kettle.hostname" value="" />
-   <property key="ca.sqlpower.architect.etl.kettle.repos.login" value="" />
-   <property key="ca.sqlpower.architect.etl.kettle.repos.password" value="" />
+   <property key="Logical" value="PlayPen Database" />
   </data-source>
-  <data-source id="DS0">
+  <data-source id="DS2">
    <property key="Connection Type" value="Oracle 11g" />
-   <property key="Logical" value="vbatch_dev_local" />
+   <property key="Logical" value="PlayPen Database" />
    <property key="JDBC URL" value="jdbc:oracle:thin:@192.168.56.1:1521:XE" />
    <property key="UID" value="vbatch" />
    <property key="PWD" value="vbatch" />
@@ -29,7 +20,7 @@
   </data-source>
  </project-data-sources>
  <source-databases>
-  <database id="DB0" populated="true" UUID="7f459bac-0099-43d2-a996-38c664cc4670" dbcs-ref="DS0" name="vbatch_dev_local" physicalName="vbatch_dev_local" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: Couldn&apos;t connect to database: JDBC Driver &quot;oracle.jdbc.OracleDriver&quot; not found." >
+  <database id="DB0" populated="true" UUID="7f459bac-0099-43d2-a996-38c664cc4670" dbcs-ref="DS2" name="PlayPen Database" physicalName="vbatch_dev_local" sql-exception="ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: ca.sqlpower.sqlobject.SQLObjectException: Couldn&apos;t connect to database: JDBC Driver &quot;oracle.jdbc.OracleDriver&quot; not found." >
    <relationships>
    </relationships>
   </database>
@@ -44,37 +35,37 @@
     <column id="COL4" populated="true" UUID="9d4baaee-30fa-40d8-8097-39db5a84ff5d" autoIncrement="false" autoIncrementSequenceName="Steps_type_seq" defaultValue="" name="type" nullable="0" physicalName="type" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks>Type of step (Extract, Transform, etc)</remarks>
     </column>
-    <column id="COL5" populated="true" UUID="5b4e9386-f7df-44ca-9d23-8bb0c3c2cf80" autoIncrement="false" autoIncrementSequenceName="Steps_Extract_Max_Rec_Per_File_seq" defaultValue="" name="Extract_Max_Rec_Per_File" nullable="0" physicalName="Extract_Max_Rec_Per_File" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL5" populated="true" UUID="5b4e9386-f7df-44ca-9d23-8bb0c3c2cf80" autoIncrement="false" autoIncrementSequenceName="Steps_extract_max_rec_per_file_seq" defaultValue="" name="extract_max_rec_per_file" nullable="0" physicalName="extract_max_rec_per_file" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL6" populated="true" UUID="f80ffae1-a930-4899-89a0-13aa8da723ab" autoIncrement="false" autoIncrementSequenceName="Steps_Extract_Commit_Freq_seq" defaultValue="" name="Extract_Commit_Freq" nullable="0" physicalName="Extract_Commit_Freq" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL6" populated="true" UUID="f80ffae1-a930-4899-89a0-13aa8da723ab" autoIncrement="false" autoIncrementSequenceName="Steps_Extract_Commit_Freq_seq" defaultValue="" name="extract_commit_freq" nullable="0" physicalName="extract_commit_freq" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL7" populated="true" UUID="73a1ad8a-1798-45b2-97b1-d89d48fac0c5" autoIncrement="false" autoIncrementSequenceName="Steps_Extract_Sql_seq" defaultValue="" name="Extract_Sql" nullable="1" physicalName="Extract_Sql" precision="4000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL7" populated="true" UUID="73a1ad8a-1798-45b2-97b1-d89d48fac0c5" autoIncrement="false" autoIncrementSequenceName="Steps_Extract_Sql_seq" defaultValue="" name="extract_sql" nullable="1" physicalName="extract_sql" precision="4000" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL8" populated="true" UUID="dadf5d32-a0e7-4a2f-b16a-1c646f66d0fa" autoIncrement="false" autoIncrementSequenceName="Steps_Description_seq" defaultValue="" name="Description" nullable="0" physicalName="Description" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL8" populated="true" UUID="dadf5d32-a0e7-4a2f-b16a-1c646f66d0fa" autoIncrement="false" autoIncrementSequenceName="Steps_Description_seq" defaultValue="" name="description" nullable="0" physicalName="description" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL9" populated="true" UUID="a5b5bb1b-58b3-4267-8f5d-996c78d09d30" autoIncrement="false" autoIncrementSequenceName="Steps_Output_File_Format_seq" defaultValue="" name="Output_File_Format" nullable="0" physicalName="Output_File_Format" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL9" populated="true" UUID="a5b5bb1b-58b3-4267-8f5d-996c78d09d30" autoIncrement="false" autoIncrementSequenceName="Steps_Output_File_Format_seq" defaultValue="" name="output_file_format" nullable="0" physicalName="output_file_format" precision="10" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL10" populated="true" UUID="2e25efe7-809e-4803-bc07-5de997a0657b" autoIncrement="false" autoIncrementSequenceName="Steps_Output_Filename_Prefix_seq" defaultValue="" name="Output_Filename_Prefix" nullable="0" physicalName="Output_Filename_Prefix" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL10" populated="true" UUID="2e25efe7-809e-4803-bc07-5de997a0657b" autoIncrement="false" autoIncrementSequenceName="Steps_Output_Filename_Prefix_seq" defaultValue="" name="output_filename_prefix" nullable="0" physicalName="output_filename_prefix" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL11" populated="true" UUID="ee32f7db-0d04-497b-8104-3e141b848bb8" autoIncrement="false" autoIncrementSequenceName="Steps_Output_Filename_Postfix_seq" defaultValue="" name="Output_Filename_Postfix" nullable="0" physicalName="Output_Filename_Postfix" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL11" populated="true" UUID="ee32f7db-0d04-497b-8104-3e141b848bb8" autoIncrement="false" autoIncrementSequenceName="Steps_Output_Filename_Postfix_seq" defaultValue="" name="output_filename_postfix" nullable="0" physicalName="output_filename_postfix" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL12" populated="true" UUID="e144fef7-b47f-4ab6-a429-f3c391827d0b" autoIncrement="false" autoIncrementSequenceName="Steps_Java_Bean_Path_seq" defaultValue="" name="Java_Bean_Path" nullable="0" physicalName="Java_Bean_Path" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL12" populated="true" UUID="e144fef7-b47f-4ab6-a429-f3c391827d0b" autoIncrement="false" autoIncrementSequenceName="Steps_Java_Bean_Path_seq" defaultValue="" name="java_bean_path" nullable="0" physicalName="java_bean_path" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL13" populated="true" UUID="85098f5d-39d2-4739-ba23-506e2fb554dc" autoIncrement="false" autoIncrementSequenceName="Steps_Param1_seq" defaultValue="" name="Param1" nullable="0" physicalName="Param1" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL13" populated="true" UUID="85098f5d-39d2-4739-ba23-506e2fb554dc" autoIncrement="false" autoIncrementSequenceName="Steps_Param1_seq" defaultValue="" name="param1" nullable="0" physicalName="param1" precision="100" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL14" populated="true" UUID="3d8e2904-1e39-4ef5-8e61-5eb9a0b6f9bd" autoIncrement="false" autoIncrementSequenceName="Steps_Param2_seq" defaultValue="" name="Param2" nullable="0" physicalName="Param2" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL14" populated="true" UUID="3d8e2904-1e39-4ef5-8e61-5eb9a0b6f9bd" autoIncrement="false" autoIncrementSequenceName="Steps_Param2_seq" defaultValue="" name="param2" nullable="0" physicalName="param2" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL15" populated="true" UUID="bdd48edc-9199-41fc-891c-3b8ffdc7c268" autoIncrement="false" autoIncrementSequenceName="Steps_Param3_seq" defaultValue="" name="Param3" nullable="0" physicalName="Param3" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL15" populated="true" UUID="bdd48edc-9199-41fc-891c-3b8ffdc7c268" autoIncrement="false" autoIncrementSequenceName="Steps_Param3_seq" defaultValue="" name="param3" nullable="0" physicalName="param3" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -94,10 +85,10 @@
     <column id="COL19" populated="true" UUID="495bd4e0-2a2e-42e2-987a-f5feeda46a86" autoIncrement="false" autoIncrementSequenceName="Job_Master_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL20" populated="true" UUID="45da64bf-afde-425a-a687-a3061526301e" autoIncrement="false" autoIncrementSequenceName="Job_Master_Name_seq" defaultValue="" name="Name" nullable="0" physicalName="Name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL20" populated="true" UUID="45da64bf-afde-425a-a687-a3061526301e" autoIncrement="false" autoIncrementSequenceName="Job_Master_Name_seq" defaultValue="" name="name" nullable="0" physicalName="name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL21" populated="true" UUID="021d6caf-ac8b-45c5-8625-63b1eafc431d" autoIncrement="false" autoIncrementSequenceName="Job_Master_Description_seq" defaultValue="" name="Description" nullable="0" physicalName="Description" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL21" populated="true" UUID="021d6caf-ac8b-45c5-8625-63b1eafc431d" autoIncrement="false" autoIncrementSequenceName="Job_Master_Description_seq" defaultValue="" name="description" nullable="0" physicalName="description" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     </folder>
@@ -117,16 +108,16 @@
     <column id="COL25" populated="true" UUID="bff5948d-6218-4e3d-813e-464a212d7c03" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="3" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL26" populated="true" UUID="2236a272-c789-4852-8a10-c96c2c4ab34e" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_Job_Master_Id_seq" defaultValue="" name="Job_Master_Id" nullable="0" physicalName="Job_Master_Id" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL26" populated="true" UUID="2236a272-c789-4852-8a10-c96c2c4ab34e" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_Job_Master_Id_seq" defaultValue="" name="job_master_id" nullable="0" physicalName="job_master_id" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL27" populated="true" UUID="72805ea9-9dc5-463c-9c7b-4b79ba292fe4" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_Job_Seq_seq" defaultValue="" name="Job_Seq" nullable="0" physicalName="Job_Seq" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL27" populated="true" UUID="72805ea9-9dc5-463c-9c7b-4b79ba292fe4" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_Job_Seq_seq" defaultValue="" name="job_seq" nullable="0" physicalName="job_seq" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL28" populated="true" UUID="0205b6db-33c6-45ae-9e75-501b7fa02181" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_Description_seq" defaultValue="" name="Description" nullable="0" physicalName="Description" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL28" populated="true" UUID="0205b6db-33c6-45ae-9e75-501b7fa02181" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_Description_seq" defaultValue="" name="description" nullable="0" physicalName="description" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL29" populated="true" UUID="82f744ff-4edb-41b6-af50-1e7155d90d96" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_Step_Id_seq" defaultValue="" name="Step_Id" nullable="0" physicalName="Step_Id" precision="0" referenceCount="0" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL29" populated="true" UUID="82f744ff-4edb-41b6-af50-1e7155d90d96" autoIncrement="false" autoIncrementSequenceName="Job_Steps_Xref_Step_Id_seq" defaultValue="" name="step_id" nullable="0" physicalName="step_id" precision="0" referenceCount="0" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     </folder>
@@ -145,19 +136,19 @@
   <table id="TAB34" populated="true" UUID="76f9018b-46ae-4e08-8323-336fffdbf88e" name="Vbatch_Log" objectType="TABLE" physicalName="Vbatch_Log" >
    <remarks></remarks>
    <folder id="FOLTAB341" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL35" populated="true" UUID="66eea73c-e89b-4319-b438-cfe729602498" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="Seq_Nbr" nullable="0" physicalName="Seq_Nbr" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL35" populated="true" UUID="66eea73c-e89b-4319-b438-cfe729602498" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="seq_nbr" nullable="0" physicalName="seq_nbr" precision="0" primaryKeySeq="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL36" populated="true" UUID="a593bdf5-9c09-4d6f-8690-4309fb1e3090" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Id_seq" defaultValue="" name="Id" nullable="0" physicalName="Id" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL36" populated="true" UUID="a593bdf5-9c09-4d6f-8690-4309fb1e3090" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL37" populated="true" UUID="dd2b2b50-1e93-4931-b19f-6a062465f5d2" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Status_seq" defaultValue="" name="Status" nullable="0" physicalName="Status" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL37" populated="true" UUID="dd2b2b50-1e93-4931-b19f-6a062465f5d2" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_status_seq" defaultValue="" name="status" nullable="0" physicalName="status" precision="50" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL38" populated="true" UUID="3eb8ca5b-8eeb-41f4-b09e-247eafaabf87" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_End_Dt_seq" defaultValue="" name="End_Dt" nullable="0" physicalName="End_Dt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+    <column id="COL38" populated="true" UUID="3eb8ca5b-8eeb-41f4-b09e-247eafaabf87" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_End_Dt_seq" defaultValue="" name="end_dt" nullable="0" physicalName="end_dt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
     </column>
-    <column id="COL39" populated="true" UUID="32b4ace1-aef6-44f5-9a95-37724ebb3b3d" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_End_Dt_seq" defaultValue="" name="Start_Dt" nullable="0" physicalName="End_Dt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+    <column id="COL39" populated="true" UUID="32b4ace1-aef6-44f5-9a95-37724ebb3b3d" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_End_Dt_seq" defaultValue="" name="start_dt" nullable="0" physicalName="end_dt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
     </column>
     </folder>
@@ -175,58 +166,58 @@
   <table id="TAB43" populated="true" UUID="a2ea6a7b-d605-4762-800c-b3e580c8caf5" name="Vbatch_Log_Dtl" objectType="TABLE" physicalName="Vbatch_Log_Dtl" >
    <remarks></remarks>
    <folder id="FOLTAB431" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL44" populated="true" UUID="640f9315-f329-418f-b533-1221679a094f" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Id_seq" defaultValue="" name="Id" nullable="0" physicalName="Id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" source-column-ref="COL36" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL44" populated="true" UUID="640f9315-f329-418f-b533-1221679a094f" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Id_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" source-column-ref="COL36" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL45" populated="true" UUID="0cf33705-4e95-4972-9170-7b79fdb5f064" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Vbatch_Log_Id_seq" defaultValue="" name="Vbatch_Log_Id" nullable="0" physicalName="Vbatch_Log_Id" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL45" populated="true" UUID="0cf33705-4e95-4972-9170-7b79fdb5f064" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Vbatch_Log_Id_seq" defaultValue="" name="vbatch_log_id" nullable="0" physicalName="vbatch_log_id" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL46" populated="true" UUID="fa07298f-650f-4228-aaf7-aaaee46cd42d" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="Seq_Nbr" nullable="0" physicalName="Seq_Nbr" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL46" populated="true" UUID="fa07298f-650f-4228-aaf7-aaaee46cd42d" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="seq_nbr" nullable="0" physicalName="seq_nbr" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL47" populated="true" UUID="45129ec0-6d41-43ba-8d74-bfd23eb5f217" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Status_seq" defaultValue="" name="Status" nullable="0" physicalName="Status" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL47" populated="true" UUID="45129ec0-6d41-43ba-8d74-bfd23eb5f217" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Status_seq" defaultValue="" name="status" nullable="0" physicalName="status" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL48" populated="true" UUID="de3c1721-d501-45f8-a1a8-d7a69fe74ef0" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_End_Dt_seq" defaultValue="" name="End_Dt" nullable="0" physicalName="Dtl_End_Dt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+    <column id="COL48" populated="true" UUID="de3c1721-d501-45f8-a1a8-d7a69fe74ef0" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_End_Dt_seq" defaultValue="" name="end_dt" nullable="0" physicalName="dtl_end_dt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
     </column>
-    <column id="COL49" populated="true" UUID="73cf6909-5b95-4075-b457-a19ba58e8efb" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_End_Dt_seq" defaultValue="" name="Start_Dt" nullable="0" physicalName="Dtl_End_Dt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
+    <column id="COL49" populated="true" UUID="73cf6909-5b95-4075-b457-a19ba58e8efb" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_End_Dt_seq" defaultValue="" name="start_dt" nullable="0" physicalName="dtl_end_dt" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="91" userDefinedTypeUUID="ee349be3-6af2-46e1-b305-975f5354b009" >
      <remarks></remarks>
     </column>
-    <column id="COL50" populated="true" UUID="8b18961f-a750-4650-81bf-d4b60f17d47a" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Error_Msg_seq" defaultValue="" name="Error_Msg" nullable="0" physicalName="Error_Msg" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL50" populated="true" UUID="8b18961f-a750-4650-81bf-d4b60f17d47a" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Error_Msg_seq" defaultValue="" name="error_msg" nullable="0" physicalName="error_msg" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL51" populated="true" UUID="6be4d286-481d-4136-b90b-e1c752b306a7" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Job_Id_seq" defaultValue="" name="Job_Id" nullable="0" physicalName="Job_Id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL51" populated="true" UUID="6be4d286-481d-4136-b90b-e1c752b306a7" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Job_Id_seq" defaultValue="" name="job_id" nullable="0" physicalName="job_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL52" populated="true" UUID="adc1f074-b830-4c81-be4b-f2ac81f57050" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Job_Seq_seq" defaultValue="" name="Job_Seq" nullable="0" physicalName="Job_Seq" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL52" populated="true" UUID="adc1f074-b830-4c81-be4b-f2ac81f57050" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Job_Seq_seq" defaultValue="" name="job_seq" nullable="0" physicalName="job_seq" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL53" populated="true" UUID="1a8e32cd-3e64-4203-a59b-1a25eed37beb" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Step_Id_seq" defaultValue="" name="Step_Id" nullable="0" physicalName="Step_Id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL53" populated="true" UUID="1a8e32cd-3e64-4203-a59b-1a25eed37beb" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Step_Id_seq" defaultValue="" name="step_id" nullable="0" physicalName="step_id" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL54" populated="true" UUID="5010ea72-deb5-48f0-80c1-3be2f1df602e" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Step_Name_seq" defaultValue="" name="Step_Name" nullable="0" physicalName="Step_Name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL54" populated="true" UUID="5010ea72-deb5-48f0-80c1-3be2f1df602e" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Step_Name_seq" defaultValue="" name="step_name" nullable="0" physicalName="step_name" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL55" populated="true" UUID="750f6feb-5957-40db-a2a8-5cf7183be5c4" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Step_Type_seq" defaultValue="" name="Step_Type" nullable="0" physicalName="Step_Type" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL55" populated="true" UUID="750f6feb-5957-40db-a2a8-5cf7183be5c4" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Step_Type_seq" defaultValue="" name="step_type" nullable="0" physicalName="step_type" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL56" populated="true" UUID="096e69bd-92a6-4def-8456-0db186b590f0" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Num_Records_seq" defaultValue="" name="Num_Records" nullable="0" physicalName="Num_Records" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL56" populated="true" UUID="096e69bd-92a6-4def-8456-0db186b590f0" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Num_Records_seq" defaultValue="" name="num_records" nullable="0" physicalName="num_records" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL57" populated="true" UUID="f0eff85c-1990-4195-8c40-9de19a533c54" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Extract_Sql_seq" defaultValue="" name="Extract_Sql" nullable="0" physicalName="Extract_Sql" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL57" populated="true" UUID="f0eff85c-1990-4195-8c40-9de19a533c54" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Extract_Sql_seq" defaultValue="" name="extract_sql" nullable="0" physicalName="extract_sql" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL58" populated="true" UUID="31c76c8b-9875-4efb-8324-bf3a67371558" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Extract_Max_Recs_Per_File_seq" defaultValue="" name="Extract_Max_Recs_Per_File" nullable="0" physicalName="Extract_Max_Recs_Per_File" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL58" populated="true" UUID="31c76c8b-9875-4efb-8324-bf3a67371558" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Extract_Max_Recs_Per_File_seq" defaultValue="" name="extract_max_recs_per_file" nullable="0" physicalName="extract_max_recs_per_file" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL59" populated="true" UUID="f2a9a5fc-5f8d-45ee-87f0-294b6b6e5d28" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Extract_Commit_Freq_seq" defaultValue="" name="Extract_Commit_Freq" nullable="0" physicalName="Extract_Commit_Freq" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL59" populated="true" UUID="f2a9a5fc-5f8d-45ee-87f0-294b6b6e5d28" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Extract_Commit_Freq_seq" defaultValue="" name="extract_commit_freq" nullable="0" physicalName="extract_commit_freq" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL60" populated="true" UUID="fdc80918-96fa-4f6a-bf08-c227122da31d" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Description_seq" defaultValue="" name="Description" nullable="0" physicalName="Description" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL60" populated="true" UUID="fdc80918-96fa-4f6a-bf08-c227122da31d" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Description_seq" defaultValue="" name="description" nullable="0" physicalName="description" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
-    <column id="COL61" populated="true" UUID="88fead9c-2d9a-401c-8ec8-89e17b79fd13" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Output_File_Format_seq" defaultValue="" name="Output_File_Format" nullable="0" physicalName="Output_File_Format" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
+    <column id="COL61" populated="true" UUID="88fead9c-2d9a-401c-8ec8-89e17b79fd13" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_Output_File_Format_seq" defaultValue="" name="output_file_format" nullable="0" physicalName="output_file_format" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
      <remarks></remarks>
     </column>
     <column id="COL62" populated="true" UUID="b6f76366-8264-4d1a-9b1e-525797f4fbe7" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Dtl_output_filename_prefix_seq" defaultValue="" name="output_filename_prefix" nullable="0" physicalName="output_filename_prefix" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -268,7 +259,7 @@
   <table id="TAB73" populated="true" UUID="bfce523c-d4e6-461f-bc20-2e153d6302ec" name="vbatch_log_ok_dtl" objectType="TABLE" physicalName="vbatch_log_ok_dtl" >
    <remarks></remarks>
    <folder id="FOLTAB731" populated="true" name="Columns" physicalName="Columns" type="1">
-    <column id="COL74" populated="true" UUID="1c02d204-8a46-4d20-9f3c-0d2bf7f5950a" autoIncrement="false" autoIncrementSequenceName="vbtach_log_ok_dtl_seq" defaultValue="" name="Id" nullable="0" physicalName="Id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL74" populated="true" UUID="1c02d204-8a46-4d20-9f3c-0d2bf7f5950a" autoIncrement="false" autoIncrementSequenceName="vbtach_log_ok_dtl_seq" defaultValue="" name="id" nullable="0" physicalName="id" precision="0" primaryKeySeq="0" referenceCount="2" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL75" populated="true" UUID="96a68982-bc67-488f-bd72-98035cacb736" autoIncrement="false" autoIncrementSequenceName="vbatch_log_ok_dtl_vbatch_log_id_seq" defaultValue="" name="vbatch_log_id" nullable="0" physicalName="vbatch_log_id" precision="0" primaryKeySeq="1" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
@@ -277,7 +268,7 @@
     <column id="COL76" populated="true" UUID="ff3c2158-773c-410b-b67f-448f71371b8b" autoIncrement="false" autoIncrementSequenceName="vbatch_log_ok_dtl_vbatch_log_seq_nbr_seq" defaultValue="" name="vbatch_log_seq_nbr" nullable="0" physicalName="vbatch_log_seq_nbr" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL77" populated="true" UUID="76b96b49-f25d-4af7-9acd-122e31253b97" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="Seq_Nbr" nullable="0" physicalName="Seq_Nbr" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL77" populated="true" UUID="76b96b49-f25d-4af7-9acd-122e31253b97" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="seq_nbr" nullable="0" physicalName="seq_nbr" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL78" populated="true" UUID="383027d0-b903-4e9b-85e7-db0627d4ae0c" autoIncrement="false" autoIncrementSequenceName="vbatch_log_ok_dtl_pk1_seq" defaultValue="" name="pk1" nullable="0" physicalName="pk1" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="2" userDefinedTypeUUID="115245ce-612c-4d6a-b559-6dd903dd959a" >
@@ -317,13 +308,13 @@
     <column id="COL89" populated="true" UUID="ee0c14b5-44c5-4b0a-aad4-d9f26ae3ee00" autoIncrement="false" autoIncrementSequenceName="vbatch_log_file_output_vbatch_log_seq_nbr_seq" defaultValue="" name="vbatch_log_seq_nbr" nullable="0" physicalName="vbatch_log_seq_nbr" precision="0" primaryKeySeq="2" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL90" populated="true" UUID="314a0ae7-8923-4a76-b3e0-81f8458113cc" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="Seq_Nbr" nullable="0" physicalName="Seq_Nbr" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL90" populated="true" UUID="314a0ae7-8923-4a76-b3e0-81f8458113cc" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="seq_nbr" nullable="0" physicalName="seq_nbr" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL91" populated="true" UUID="0093cf39-a5d0-4d36-90d4-36effecb3d69" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="Vbatch_Log_Seq_Nbr_1" nullable="0" physicalName="Vbatch_Log_Seq_Nbr_1" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL91" populated="true" UUID="0093cf39-a5d0-4d36-90d4-36effecb3d69" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Seq_Nbr_seq" defaultValue="" name="vbatch_log_seq_nbr_1" nullable="0" physicalName="vbatch_log_seq_nbr_1" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
-    <column id="COL92" populated="true" UUID="eede19a5-6621-4bc6-9e8a-b6f90d74e562" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Id_seq" defaultValue="" name="Vbatch_Log_Id_1" nullable="0" physicalName="Vbatch_Log_Id_1" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
+    <column id="COL92" populated="true" UUID="eede19a5-6621-4bc6-9e8a-b6f90d74e562" autoIncrement="false" autoIncrementSequenceName="Vbatch_Log_Id_seq" defaultValue="" name="vbatch_log_id_1" nullable="0" physicalName="vbatch_log_id_1" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="4" userDefinedTypeUUID="63b011c7-c81f-4c75-8271-632b3c87f727" >
      <remarks></remarks>
     </column>
     <column id="COL93" populated="true" UUID="7c383315-04c9-4a0a-8f7e-196a46cacfe1" autoIncrement="false" autoIncrementSequenceName="vbatch_log_file_output_filename_seq" defaultValue="" name="filename" nullable="0" physicalName="filename" precision="0" referenceCount="1" scale="0" sourceDataTypeName="UserDefinedSQLType" type="12" userDefinedTypeUUID="831ac2d4-0e65-47ec-a0b7-62b7f6b8760a" >
@@ -373,23 +364,23 @@
    </relationship>
   </relationships>
  </target-database>
- <ddl-generator type="ca.sqlpower.architect.ddl.Oracle9PlusDDLGenerator" allow-connection="false" target-schema="vbatch"> </ddl-generator>
+ <ddl-generator type="ca.sqlpower.architect.ddl.Oracle9PlusDDLGenerator" allow-connection="true" target-schema="vbatch"> </ddl-generator>
  <liquibase-settings useSeparateChangeSets="false" generateId="false" idStart="1"/>
  <create-kettle-job-settings filePath="" jobName="" schemaName="" kettleJoinType="0" savingToFile="true" />
- <play-pen zoom="1.0" viewportX="0" viewportY="4" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
+ <play-pen zoom="1.0" viewportX="0" viewportY="210" relationship-style="rectilinear" names-displayLogicalNames="true" showPrimaryTag="true" showForeignTag="true" showAlternateTag="true" columnVisibility="ALL" relationshipLabelVisibility="true">
   <table-pane table-ref="TAB2" x="24" y="113" bgColor="0xc7d0df" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB18" x="677" y="129" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB24" x="361" y="153" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB34" x="322" y="417" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-pane table-ref="TAB43" x="29" y="416" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB73" x="570" y="417" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
-  <table-pane table-ref="TAB86" x="566" y="714" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB73" x="587" y="422" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
+  <table-pane table-ref="TAB86" x="380" y="640" bgColor="0xeeeeee" fgColor="0x000000" rounded="false" dashed="false"/>
   <table-link relationship-ref="REL102" pkConnection="0.632183908045977" fkConnection="0.35772357723577236" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="18"/>
   <table-link relationship-ref="REL100" pkConnection="0.12359550561797752" fkConnection="0.9024390243902439" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
   <table-link relationship-ref="REL104" pkConnection="0.2578616352201258" fkConnection="0.6147704590818364" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="18"/>
-  <table-link relationship-ref="REL107" pkConnection="0.42138364779874216" fkConnection="0.0847457627118644" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL110" pkConnection="0.7358490566037735" fkConnection="0.5517241379310345" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
-  <table-link relationship-ref="REL113" pkConnection="0.9056603773584906" fkConnection="0.3546099290780142" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL107" pkConnection="0.8211382113821138" fkConnection="0.15819209039548024" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="33"/>
+  <table-link relationship-ref="REL110" pkConnection="0.6204819277108434" fkConnection="0.17490494296577946" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="132"/>
+  <table-link relationship-ref="REL113" pkConnection="0.7409638554216867" fkConnection="0.2509505703422053" rLineColor="0x4c4c4c" pkLabelText="" fkLabelText="" orientation="132"/>
  </play-pen>
  <critic-manager>
   <critic-grouping platformType="Generic" enabled="true">
