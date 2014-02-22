@@ -1,27 +1,35 @@
 
-CREATE SEQUENCE VBATCH_LOG_ID_SEQ;
+CREATE TABLE vbatch.job_master (
+                id NUMBER NOT NULL,
+                name VARCHAR2(50) NOT NULL,
+                description VARCHAR2(100) NOT NULL,
+                CONSTRAINT JOB_MASTER_PK PRIMARY KEY (id)
+);
+
+
+CREATE SEQUENCE JOB_MASTER_ID_SEQ;
 
 CREATE TABLE vbatch.vbatch_log (
-                seq_nbr NUMBER NOT NULL,
+                job_seq_nbr NUMBER NOT NULL,
+                job_master_id NUMBER NOT NULL,
                 id NUMBER NOT NULL,
                 vbatch_log_status VARCHAR2(50) NOT NULL,
                 vbatch_log_end_dt DATE,
                 vbatch_log_start_dt DATE,
-                CONSTRAINT VBATCH_LOG_PK PRIMARY KEY (seq_nbr, id)
+                CONSTRAINT VBATCH_LOG_PK PRIMARY KEY (job_seq_nbr, job_master_id)
 );
 
 
 CREATE SEQUENCE VBATCH_LOG_DTL_ID_SEQ;
 
 CREATE TABLE vbatch.vbatch_log_dtl (
-                log_dtl_log_id_id NUMBER NOT NULL,
+                job_seq_nbr_id NUMBER NOT NULL,
+                job_master_id_id NUMBER NOT NULL,
                 id NUMBER NOT NULL,
-                log_dtl_log_seq_nbr_id NUMBER NOT NULL,
                 status VARCHAR2(50) NOT NULL,
-                vbatch_log_dtl_end_dt DATE,
-                vbatch_log_dtl_start_dt DATE,
+                log_dtl_end_dt DATE,
+                log_dtl_start_dt DATE,
                 error_msg VARCHAR2(150) NOT NULL,
-                job_id NUMBER NOT NULL,
                 job_seq NUMBER,
                 job_step_id NUMBER NOT NULL,
                 step_name NUMBER NOT NULL,
@@ -40,45 +48,35 @@ CREATE TABLE vbatch.vbatch_log_dtl (
                 param3 VARCHAR2(150) NOT NULL,
                 min_ok1 VARCHAR2(150) NOT NULL,
                 max_ok2 VARCHAR2(150) NOT NULL,
-                CONSTRAINT VBATCH_LOG_DTL_PK PRIMARY KEY (log_dtl_log_id_id, id, log_dtl_log_seq_nbr_id)
+                CONSTRAINT VBATCH_LOG_DTL_PK PRIMARY KEY (job_seq_nbr_id, job_master_id_id)
 );
 
 
-CREATE SEQUENCE OK_DTL_LOG_ID_SEQ;
+CREATE SEQUENCE VBTACH_LOG_OK_DTL_ID_SEQ;
 
 CREATE TABLE vbatch.vbatch_log_ok_dtl (
+                job_seq_nbr_id NUMBER NOT NULL,
+                job_master_id_id NUMBER NOT NULL,
                 id NUMBER NOT NULL,
-                ok_dtl_log_seq_nbr_id NUMBER NOT NULL,
-                ok_dtl_log_id NUMBER NOT NULL,
                 pk1 NUMBER NOT NULL,
                 pk2 NUMBER NOT NULL,
                 pk3 NUMBER NOT NULL,
                 ok VARCHAR2(150) NOT NULL,
-                CONSTRAINT VBATCH_LOG_OK_DTL_PK PRIMARY KEY (id, ok_dtl_log_seq_nbr_id, ok_dtl_log_id)
+                CONSTRAINT VBATCH_LOG_OK_DTL_PK PRIMARY KEY (job_seq_nbr_id, job_master_id_id)
 );
 
 
 CREATE SEQUENCE VBATCH_LOG_FILE_OUTPUT_ID_SEQ;
 
 CREATE TABLE vbatch.vbatch_log_file_output (
+                job_seq_nbr_id NUMBER NOT NULL,
+                job_master_id_id NUMBER NOT NULL,
                 id NUMBER NOT NULL,
-                output_log_seq_nbr_id NUMBER NOT NULL,
-                output_log_id NUMBER NOT NULL,
                 filename VARCHAR2(150) NOT NULL,
                 num_records NUMBER NOT NULL,
                 create_dt DATE NOT NULL,
                 log_dtl_seq_nbr NUMBER,
-                CONSTRAINT VBATCH_LOG_FILE_OUTPUT_PK PRIMARY KEY (id, output_log_seq_nbr_id, output_log_id)
-);
-
-
-CREATE SEQUENCE JOB_MASTER_ID_SEQ;
-
-CREATE TABLE vbatch.job_master (
-                id NUMBER NOT NULL,
-                name VARCHAR2(50) NOT NULL,
-                description VARCHAR2(100) NOT NULL,
-                CONSTRAINT JOB_MASTER_PK PRIMARY KEY (id)
+                CONSTRAINT VBATCH_LOG_FILE_OUTPUT_PK PRIMARY KEY (job_seq_nbr_id, job_master_id_id)
 );
 
 
@@ -103,36 +101,43 @@ CREATE TABLE vbatch.steps (
 COMMENT ON COLUMN vbatch.steps.type IS 'Type of step (Extract, Transform, etc)';
 
 
+CREATE SEQUENCE JOB_STEPS_JOB_ID_ID_SEQ;
+
 CREATE SEQUENCE JOB_STEPS_XREF_ID_SEQ;
 
 CREATE TABLE vbatch.job_steps_xref (
-                id NUMBER NOT NULL,
-                job_master_id NUMBER NOT NULL,
-                job_seq NUMBER NOT NULL,
+                job_Id_id NUMBER NOT NULL,
+                job_step_seq NUMBER NOT NULL,
                 step_id NUMBER NOT NULL,
+                id NUMBER NOT NULL,
                 description VARCHAR2(100) NOT NULL,
-                CONSTRAINT JOB_STEPS_XREF_PK PRIMARY KEY (id, job_master_id, job_seq, step_id)
+                CONSTRAINT JOB_STEPS_XREF_PK PRIMARY KEY (job_Id_id, job_step_seq, step_id)
 );
 
 
+ALTER TABLE vbatch.job_steps_xref ADD CONSTRAINT JOB_STEPS_XREF_JOB_MASTER_FK
+FOREIGN KEY (job_Id_id)
+REFERENCES vbatch.job_master (id)
+NOT DEFERRABLE;
+
+ALTER TABLE vbatch.vbatch_log ADD CONSTRAINT JOB_MASTER_VBATCH_LOG_FK
+FOREIGN KEY (job_master_id)
+REFERENCES vbatch.job_master (id)
+NOT DEFERRABLE;
+
 ALTER TABLE vbatch.vbatch_log_file_output ADD CONSTRAINT VBATCH_LOG_FILE_OUTPUT_FK1
-FOREIGN KEY (output_log_seq_nbr_id, output_log_id)
-REFERENCES vbatch.vbatch_log (seq_nbr, id)
+FOREIGN KEY (job_seq_nbr_id, job_master_id_id)
+REFERENCES vbatch.vbatch_log (job_seq_nbr, job_master_id)
 NOT DEFERRABLE;
 
 ALTER TABLE vbatch.vbatch_log_ok_dtl ADD CONSTRAINT VBATCH_LOG_VBATCH_LOG_OK_DT46
-FOREIGN KEY (ok_dtl_log_seq_nbr_id, ok_dtl_log_id)
-REFERENCES vbatch.vbatch_log (seq_nbr, id)
+FOREIGN KEY (job_seq_nbr_id, job_master_id_id)
+REFERENCES vbatch.vbatch_log (job_seq_nbr, job_master_id)
 NOT DEFERRABLE;
 
 ALTER TABLE vbatch.vbatch_log_dtl ADD CONSTRAINT VBATCH_LOG_VBATCH_LOG_DTL_FK
-FOREIGN KEY (log_dtl_log_seq_nbr_id, log_dtl_log_id_id)
-REFERENCES vbatch.vbatch_log (seq_nbr, id)
-NOT DEFERRABLE;
-
-ALTER TABLE vbatch.job_steps_xref ADD CONSTRAINT JOB_STEPS_XREF_JOB_MASTER_FK
-FOREIGN KEY (job_master_id)
-REFERENCES vbatch.job_master (id)
+FOREIGN KEY (job_seq_nbr_id, job_master_id_id)
+REFERENCES vbatch.vbatch_log (job_seq_nbr, job_master_id)
 NOT DEFERRABLE;
 
 ALTER TABLE vbatch.job_steps_xref ADD CONSTRAINT JOB_STEPS_XREF_STEPS_FK
