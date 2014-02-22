@@ -135,7 +135,7 @@
 <td class="tdTableDefinition">name</td><td class="tdTableDefinition">name</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">description</td><td class="tdTableDefinition">description</td><td class="tdTableDefinition">VARCHAR(250)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">description</td><td class="tdTableDefinition">description</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 </table>
 <div class="references">
@@ -170,12 +170,12 @@
 <td class="tdTableDefinition">job_seq (PK)</td><td class="tdTableDefinition">job_seq</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">description</td><td class="tdTableDefinition">description</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">step_id (PK)
+                &nbsp;(<a href="#steps">FK</a>)
+              </td><td class="tdTableDefinition">step_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">step_id
-                &nbsp;(<a href="#steps">FK</a>)
-              </td><td class="tdTableDefinition">step_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">description</td><td class="tdTableDefinition">description</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 </table>
 <div class="references">
@@ -272,26 +272,24 @@
 <td class="tdTableDefinition">id (PK)</td><td class="tdTableDefinition">id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">status</td><td class="tdTableDefinition">status</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">status</td><td class="tdTableDefinition">vbatch_log_status</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">end_dt</td><td class="tdTableDefinition">vbatch_log_end_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">end_dt</td><td class="tdTableDefinition">vbatch_log_end_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">start_dt</td><td class="tdTableDefinition">vbatch_log_start_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">start_dt</td><td class="tdTableDefinition">vbatch_log_start_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
 </tr>
 </table>
 <div class="references">
 <p class="subTitle">Referenced By</p>
 <ul>
 <li>
-<a href="#vbatch_log_dtl">vbatch_log_dtl</a> referencing (seq_nbr, id)</li>
+<a href="#vbatch_log_file_output">vbatch_log_file_output</a> referencing (seq_nbr, id)</li>
 <li>
 <a href="#vbatch_log_ok_dtl">vbatch_log_ok_dtl</a> referencing (seq_nbr, id)</li>
 <li>
-<a href="#vbatch_log_file_output">vbatch_log_file_output</a> referencing (seq_nbr, id)</li>
-<li>
-<a href="#vbatch_log_file_output">vbatch_log_file_output</a> referencing (seq_nbr, id)</li>
+<a href="#vbatch_log_dtl">vbatch_log_dtl</a> referencing (seq_nbr, id)</li>
 </ul>
 </div>
 </div>
@@ -308,44 +306,44 @@
 <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">id (PK)
+<td class="tdTableDefinition">log_dtl_log_id_id (PK)
                 &nbsp;(<a href="#vbatch_log">FK</a>)
-              </td><td class="tdTableDefinition">id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+              </td><td class="tdTableDefinition">log_dtl_log_id_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">vbatch_log_id (PK)</td><td class="tdTableDefinition">vbatch_log_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">id (PK)</td><td class="tdTableDefinition">id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">seq_nbr
+<td class="tdTableDefinition">log_dtl_log_seq_nbr_id (PK)
                 &nbsp;(<a href="#vbatch_log">FK</a>)
-              </td><td class="tdTableDefinition">seq_nbr</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+              </td><td class="tdTableDefinition">log_dtl_log_seq_nbr_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
 <td class="tdTableDefinition">status</td><td class="tdTableDefinition">status</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">end_dt</td><td class="tdTableDefinition">dtl_end_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">vbatch_log_dtl_end_dt</td><td class="tdTableDefinition">vbatch_log_dtl_end_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">start_dt</td><td class="tdTableDefinition">dtl_start_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">vbatch_log_dtl_start_dt</td><td class="tdTableDefinition">vbatch_log_dtl_start_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">error_msg</td><td class="tdTableDefinition">error_msg</td><td class="tdTableDefinition">VARCHAR(500)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">error_msg</td><td class="tdTableDefinition">error_msg</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
 <td class="tdTableDefinition">job_id</td><td class="tdTableDefinition">job_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">job_seq</td><td class="tdTableDefinition">job_seq</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">job_seq</td><td class="tdTableDefinition">job_seq</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">step_id</td><td class="tdTableDefinition">step_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">job_step_id</td><td class="tdTableDefinition">job_step_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
 <td class="tdTableDefinition">step_name</td><td class="tdTableDefinition">step_name</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">step_type</td><td class="tdTableDefinition">step_type</td><td class="tdTableDefinition">VARCHAR(25)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">step_type</td><td class="tdTableDefinition">step_type</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
 <td class="tdTableDefinition">num_records</td><td class="tdTableDefinition">num_records</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
@@ -360,41 +358,41 @@
 <td class="tdTableDefinition">extract_commit_freq</td><td class="tdTableDefinition">extract_commit_freq</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">description</td><td class="tdTableDefinition">description</td><td class="tdTableDefinition">VARCHAR(500)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">description</td><td class="tdTableDefinition">description</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">output_file_format</td><td class="tdTableDefinition">output_file_format</td><td class="tdTableDefinition">VARCHAR(20)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">output_file_format</td><td class="tdTableDefinition">output_file_format</td><td class="tdTableDefinition">VARCHAR(15)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">output_filename_prefix</td><td class="tdTableDefinition">output_filename_prefix</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">output_filename_prefix</td><td class="tdTableDefinition">output_filename_prefix</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">output_filename_suffix</td><td class="tdTableDefinition">output_filename_suffix</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">output_filename_suffix</td><td class="tdTableDefinition">output_filename_suffix</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">java_bean_path</td><td class="tdTableDefinition">java_bean_path</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">java_bean_path</td><td class="tdTableDefinition">java_bean_path</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">param1</td><td class="tdTableDefinition">param1</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">param1</td><td class="tdTableDefinition">param1</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">param2</td><td class="tdTableDefinition">param2</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">param2</td><td class="tdTableDefinition">param2</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">param3</td><td class="tdTableDefinition">param3</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">param3</td><td class="tdTableDefinition">param3</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">min_ok1</td><td class="tdTableDefinition">min_ok1</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">min_ok1</td><td class="tdTableDefinition">min_ok1</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">max_ok1</td><td class="tdTableDefinition">max_ok2</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">max_ok1</td><td class="tdTableDefinition">max_ok2</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 </table>
 <div class="references">
 <p class="subTitle">References</p>
 <ul>
 <li>
-<a href="#vbatch_log">vbatch_log</a> through (seq_nbr, id)</li>
+<a href="#vbatch_log">vbatch_log</a> through (log_dtl_log_seq_nbr_id, log_dtl_log_id_id)</li>
 </ul>
 </div>
 </div>
@@ -411,33 +409,20 @@
 <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">id (PK)
+<td class="tdTableDefinition">id (PK)</td><td class="tdTableDefinition">id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">output_log_seq_nbr_id (PK)
                 &nbsp;(<a href="#vbatch_log">FK</a>)
-              </td><td class="tdTableDefinition">id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+              </td><td class="tdTableDefinition">output_log_seq_nbr_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">vbatch_log_id (PK)</td><td class="tdTableDefinition">vbatch_log_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
-</tr>
-<tr valign="top">
-<td class="tdTableDefinition">vbatch_log_seq_nbr (PK)</td><td class="tdTableDefinition">vbatch_log_seq_nbr</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
-</tr>
-<tr valign="top">
-<td class="tdTableDefinition">seq_nbr
+<td class="tdTableDefinition">output_log_id (PK)
                 &nbsp;(<a href="#vbatch_log">FK</a>)
-              </td><td class="tdTableDefinition">seq_nbr</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+              </td><td class="tdTableDefinition">output_log_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">vbatch_log_seq_nbr_1
-                &nbsp;(<a href="#vbatch_log">FK</a>)
-              </td><td class="tdTableDefinition">vbatch_log_seq_nbr_1</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
-</tr>
-<tr valign="top">
-<td class="tdTableDefinition">vbatch_log_id_1
-                &nbsp;(<a href="#vbatch_log">FK</a>)
-              </td><td class="tdTableDefinition">vbatch_log_id_1</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
-</tr>
-<tr valign="top">
-<td class="tdTableDefinition">filename</td><td class="tdTableDefinition">filename</td><td class="tdTableDefinition">VARCHAR(100)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">filename</td><td class="tdTableDefinition">filename</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
 <td class="tdTableDefinition">num_records</td><td class="tdTableDefinition">num_records</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
@@ -445,14 +430,15 @@
 <tr valign="top">
 <td class="tdTableDefinition">create_dt</td><td class="tdTableDefinition">create_dt</td><td class="tdTableDefinition">DATE</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
+<tr valign="top">
+<td class="tdTableDefinition">seq_nbr</td><td class="tdTableDefinition">log_dtl_seq_nbr</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap></td>
+</tr>
 </table>
 <div class="references">
 <p class="subTitle">References</p>
 <ul>
 <li>
-<a href="#vbatch_log">vbatch_log</a> through (seq_nbr, id)</li>
-<li>
-<a href="#vbatch_log">vbatch_log</a> through (vbatch_log_seq_nbr_1, vbatch_log_id_1)</li>
+<a href="#vbatch_log">vbatch_log</a> through (output_log_seq_nbr_id, output_log_id)</li>
 </ul>
 </div>
 </div>
@@ -469,20 +455,17 @@
 <td class="tdTableHeading tdLogicalColName">Logical Column Name</td><td class="tdTableHeading tdPhysicalColName">Physical Column Name</td><td class="tdTableHeading tdDataType">Type</td><td class="tdTableHeading tdPkFlag">PK</td><td class="tdTableHeading tdNullFlag">Nullable</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">id (PK)
+<td class="tdTableDefinition">id (PK)</td><td class="tdTableDefinition">id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+</tr>
+<tr valign="top">
+<td class="tdTableDefinition">ok_dtl_log_seq_nbr_id (PK)
                 &nbsp;(<a href="#vbatch_log">FK</a>)
-              </td><td class="tdTableDefinition">id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+              </td><td class="tdTableDefinition">ok_dtl_log_seq_nbr_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">vbatch_log_id (PK)</td><td class="tdTableDefinition">vbatch_log_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
-</tr>
-<tr valign="top">
-<td class="tdTableDefinition">vbatch_log_seq_nbr (PK)</td><td class="tdTableDefinition">vbatch_log_seq_nbr</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
-</tr>
-<tr valign="top">
-<td class="tdTableDefinition">seq_nbr
+<td class="tdTableDefinition">ok_dtl_log_id (PK)
                 &nbsp;(<a href="#vbatch_log">FK</a>)
-              </td><td class="tdTableDefinition">seq_nbr</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+              </td><td class="tdTableDefinition">ok_dtl_log_id</td><td class="tdTableDefinition">INTEGER</td><td class="tdTableDefinition" nowrap>PK</td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
 <td class="tdTableDefinition">pk1</td><td class="tdTableDefinition">pk1</td><td class="tdTableDefinition">NUMERIC(0,0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
@@ -494,14 +477,14 @@
 <td class="tdTableDefinition">pk3</td><td class="tdTableDefinition">pk3</td><td class="tdTableDefinition">NUMERIC(0,0)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 <tr valign="top">
-<td class="tdTableDefinition">ok</td><td class="tdTableDefinition">ok</td><td class="tdTableDefinition">VARCHAR(50)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
+<td class="tdTableDefinition">ok</td><td class="tdTableDefinition">ok</td><td class="tdTableDefinition">VARCHAR(150)</td><td class="tdTableDefinition" nowrap></td><td class="tdTableDefinition" nowrap>NOT NULL</td>
 </tr>
 </table>
 <div class="references">
 <p class="subTitle">References</p>
 <ul>
 <li>
-<a href="#vbatch_log">vbatch_log</a> through (seq_nbr, id)</li>
+<a href="#vbatch_log">vbatch_log</a> through (ok_dtl_log_seq_nbr_id, ok_dtl_log_id)</li>
 </ul>
 </div>
 </div>
