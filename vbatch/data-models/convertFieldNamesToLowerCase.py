@@ -1,9 +1,11 @@
 import xml.etree.ElementTree as et
-root = et.parse('vbatch_tables.architect.backup')
 result = ''
 
+filename = 'vbatch_tables.architect'
+root = et.parse('vbatch_tables.architect')
+
 # How to make decisions based on attributes even in 2.6
-for e in root.findall('//column'):
+for e in root.findall('//table'):
     lc = e.attrib.get('name').lower()
     print e.attrib.get('name')
     e.set('name',lc)
@@ -13,4 +15,4 @@ for e in root.findall('//column'):
         result = e.text
         break
    
-root.write('vbatch_tables.architect.backup')
+root.write(filename)
